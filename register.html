@@ -1,0 +1,29 @@
+{% extends 'app/main.html' %}
+{% load static%}
+
+{% block content %}
+<head>
+    <style>
+    .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid green;
+      padding: 10px;
+    }
+    .inputs {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+</head>
+<div class="maindiv jumbotron container">
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-success btn-lg" type="submit" value="Register">
+        <p>Already have an account<a href='{% url "login" %}'>Login</a></p>
+    </form>
+
+</div>
+{% endblock %}
